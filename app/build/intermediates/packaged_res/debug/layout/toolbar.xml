@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/hellgrau"
+    android:elevation="8dp"
+    android:id="@+id/toolbar"
+    app:title="BMI Rechner"
+    app:titleTextAppearance="@style/toolbar_titel_design"
+    app:titleTextColor="@color/mittelgrau">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_home_24"
+        android:id="@+id/startseite_icon_toolbar"
+        android:contentDescription="@string/haus_icon_in_obere_linke_ecke_toolbar">
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bmi_rechner_toolbar_titel_toolbar"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="@font/raleway"
+        android:textColor="@color/mittelgrau"
+        android:elevation="8dp"
+        android:layout_marginStart="40dp"
+        android:id="@+id/app_titel_toolbar">
+    </TextView>
+
+</androidx.appcompat.widget.Toolbar>

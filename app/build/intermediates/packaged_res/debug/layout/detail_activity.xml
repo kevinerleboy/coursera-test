@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <!-- Einfügen der Toolbar -->
+    <include
+        layout="@layout/toolbar">
+    </include>
+
+    <!-- Das Scrollview für DetailActivity -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- Dient dazu, dass bei Einsatz eines Scrollview die restlichen Elemente angezeigt werden -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Horizontale Linie zur Gestaltung des UI -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/linie_horizontal">
+            </RelativeLayout>
+
+            <!-- Vertikale Linie zur Gestaltung des UI -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linie_vertikal">
+            </RelativeLayout>
+
+            <!-- Layout zur Gestaltung von Zurückgehen -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:padding="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="80dp"
+                android:id="@+id/zurueck_layout_detailactivity">
+
+                <!-- Symbol für Zurückgehen -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_arrow_back_24"
+                    android:id="@+id/zurueck_imageview_detailactivity"
+                    android:contentDescription="@string/pfeil_zurueck_icon_detail_activity">
+                </ImageView>
+
+                <!-- Text für Zurückgehen -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zurueck_detail_activity"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/raleway"
+                    android:textSize="16sp"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/zurueck_imageview_detailactivity"
+                    android:layout_centerVertical="true">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Layout zur Gestaltung der ID -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="140dp"
+                android:id="@+id/id_layout_detailactivity">
+
+                <!-- Text des Titels zur ID des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/detailansicht_von_eintrag_detail_activity"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:id="@+id/id_ueberschrift_textview_detailactivity">
+                </TextView>
+
+                <!-- Test für ID -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:layout_below="@+id/id_ueberschrift_textview_detailactivity"
+                    android:text="@string/id_detail_activity"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:id="@+id/id_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Layout zur Gestaltung des Titels -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+
+                android:layout_below="@+id/id_layout_detailactivity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:id="@+id/titel_layout_detailactivity">
+
+                <!-- Text des Titels für den Titel des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/titel_von_eintrag_detail_activity"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:id="@+id/titel_ueberschrift_textview_detailactivity">
+                </TextView>
+
+                <!-- Test für Titel -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:layout_below="@+id/titel_ueberschrift_textview_detailactivity"
+                    android:text="@string/titel_detail_activity"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:id="@+id/titel_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Namens des Eintrags -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_below="@+id/titel_layout_detailactivity"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/name_layout_detailactivity">
+
+                <!-- Überschrift für Name Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_detail_activity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:id="@+id/name_ueberschrift_detailactivity">
+                </TextView>
+
+                <!-- Der Name des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/name_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Alters des Eintrags -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_below="@id/name_layout_detailactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/alter_layout_detailactivity">
+
+                <!-- Überschrift für Alter Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alter_detail_activity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:id="@+id/alter_ueberschrift_detailactivity">
+                </TextView>
+
+                <!-- Das Alter des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/alter_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Geschlechts des Eintrags -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_below="@id/alter_layout_detailactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/geschlecht_layout_detailactivity">
+
+                <!-- Überschrift für Geschlecht Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/geschlecht_detail_activity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:id="@+id/geschlecht_ueberschrift_detailactivity">
+                </TextView>
+
+                <!-- Das Geschlecht des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/geschlecht_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung der Körpergröße des Eintrags -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toEndOf="@id/linie_vertikal"
+                android:layout_below="@id/titel_layout_detailactivity"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/koerpergroesse_layout_detailactivity">
+
+                <!-- Überschrift für Körpergröße Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/koerpergroesse_detail_activity"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:id="@+id/koerpergroesse_ueberschrift_detailactivity">
+                </TextView>
+
+                <!-- Die Körpergröße des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/koerpergroesse_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Körpergewichts des Eintrags -->
+            <RelativeLayout
+                android:id="@+id/koerpergewicht_layout_detailactivity"
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:layout_below="@id/koerpergroesse_layout_detailactivity"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_toEndOf="@id/linie_vertikal"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                tools:ignore="TextSizeCheck">
+
+                <!-- Überschrift für Körpergewicht Layout -->
+                <TextView
+                    android:id="@+id/koerpergewicht_ueberschrift_detailactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/koerpergewicht_detail_activity"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <!-- Das Körpergewicht des Eintrags -->
+                <TextView
+                    android:id="@+id/koerpergewicht_text_detailactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung der Kategorie des Eintrags -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toEndOf="@id/linie_vertikal"
+                android:layout_below="@id/koerpergewicht_layout_detailactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/kategorie_layout_detailactivity">
+
+                <!-- Überschrift für Kategorie Layout -->
+                <TextView
+                    android:id="@+id/kategorie_ueberschrift_detailactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/kategorie_detail_activity"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <!-- Die Kategorie des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/kategorie_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Datums des Eintrags -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_below="@id/geschlecht_layout_detailactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/datum_layout_detailactivity">
+
+                <!-- Überschrift für Datum Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/datum_detail_activity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:id="@+id/datum_ueberschrift_detailactivity">
+                </TextView>
+
+                <!-- Das erstellte Datum des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/datum_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des BMIs des Eintrags -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toEndOf="@id/linie_vertikal"
+                android:layout_below="@id/kategorie_layout_detailactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/bmi_layout_detailactivity">
+
+                <!-- Überschrift für BMI Layout -->
+                <TextView
+                    android:id="@+id/bmi_ueberschrift_detailactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/bmi_detail_activity"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <!-- Das BMI des Eintrags -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/bmi_text_detailactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung des Löschen Buttons -->
+            <RelativeLayout
+                android:id="@+id/loeschen_layout_detailactivity"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/datum_layout_detailactivity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp">
+
+                <!-- Button zum Löschen des angeklickten Eintrags -->
+                <android.widget.Button
+                    android:id="@+id/loeschen_button_detailactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/hintergrundbereich_ui_element_button"
+                    android:elevation="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/eintrag_loeschen_detail_activity"
+                    android:textColor="@color/weiß"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="VisualLintButtonSize">
+                </android.widget.Button>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

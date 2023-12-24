@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DatenbankActivity">
+
+    <!-- Einfügen der Toolbar -->
+    <include
+        layout="@layout/toolbar">
+    </include>
+
+    <!-- Das Scrollview für DatenbankActivity -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- Dient dazu, dass bei Einsatz eines Scrollview die restlichen Elemente angezeigt werden -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Horizontale Linie zur Gestaltung des UI -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/linie_horizontal">
+            </RelativeLayout>
+
+            <!-- Vertikale Linie zur Gestaltung des UI -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linie_vertikal">
+            </RelativeLayout>
+
+            <!-- Layout zur Gestaltung des Titels -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="90dp"
+                android:id="@+id/titel_layout_datenbankactivity">
+
+                <!-- Text des Titels -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="@string/liste_ihrer_berechnungen_datenbank_activity"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:id="@+id/titel_textview_datenbankactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Layout zur Gestaltung der Liste aller Berechnungen -->
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="450dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:nestedScrollingEnabled="false"
+                android:layout_below="@+id/titel_layout_datenbankactivity"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/liste_layout_datenbankactivity">
+
+                <!-- Lister aller Berechnungen -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/liste_recyclerview_datenbankactivity">
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </RelativeLayout>
+
+            <!-- Layout zur Gestaltung der Anzahl der Datensätze -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/liste_layout_datenbankactivity"
+                android:id="@+id/datensaetze_layout_datenbankactivity">
+
+                <!-- Text für Anzahl der Datensätze -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/anzahl_datenbank_activity"
+                    android:textSize="14sp"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:id="@+id/datensaetze_textview_datenbankactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung des Buttons um alle Einträge zu löschen -->
+            <RelativeLayout
+                android:id="@+id/alles_loeschen_layout_datenbankactivity"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/datensaetze_layout_datenbankactivity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp">
+
+                <!-- Button zum Löschen Aller Einträge -->
+                <android.widget.Button
+                    android:id="@+id/alles_loeschen_button_datenbankactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/hintergrundbereich_ui_element_button"
+                    android:elevation="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/alles_loeschen_datenbank_activity"
+                    android:textColor="@color/weiß"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="VisualLintButtonSize">
+                </android.widget.Button>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

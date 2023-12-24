@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnleitungActivity">
+
+    <!-- Einfügen der Toolbar -->
+    <include
+        layout="@layout/toolbar">
+    </include>
+
+    <!-- Das Scrollview für EingabeActivity -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- Dient dazu, dass bei Einsatz eines Scrollviews die restlichen Elemente angezeigt werden -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp">
+
+            <!-- Das Layout zur Gestaltung des Titels -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_margin="20dp"
+                android:id="@+id/titel_layout_anleitungactivity">
+
+                <!-- Text für Titel -->
+                <TextView
+                    android:id="@+id/titel_textview_anleitungactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/raleway"
+                    android:padding="10dp"
+                    android:text="@string/bedienungsanleitung_bmi_rechner_anleitung_activity"
+                    android:textAlignment="center"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="30sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung der Erklärung des BMI Rechners-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titel_layout_anleitungactivity"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/erklaerung_layout_anleitungactivity">
+
+                <!-- Text für Erklärung -->
+                <TextView
+                    android:id="@+id/erklaerung_textview_anleitungactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway"
+                    android:padding="10dp"
+                    android:text="@string/erklaerung_bmi_rechner_anleitung_activity"
+                    android:textAlignment="center"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="VisualLintLongText"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Titels der Bedienelemente -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/erklaerung_layout_anleitungactivity"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:id="@+id/bedienelemente_layout_anleitungactivity">
+
+                <!-- Text für Titel der Bedienelemente -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/erklaerung_der_bedienelemente_anleitung_activity"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/raleway"
+                    android:textSize="20sp"
+                    android:padding="10dp"
+                    android:id="@+id/bedienelemente_textview_anleitungactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout für die ganzen Bedienelemente in der EingabeActivity -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bedienelemente_layout_anleitungactivity"
+                android:id="@+id/erklaerung_bedienelemente_layout_anleitungactivity">
+
+                <!-- Das Layout zur Gestaltung des Inkrements Symbols -->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/inkrement_layout_anleitungactivity">
+
+                    <!-- Das Inkrement Symbol -->
+                    <TextView
+                        android:id="@+id/inkrement_textview_anleitungactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="-16dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/plus_anleitung_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="80sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung des Inkrement Symbols-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:id="@+id/erklaerung_inkrement_layout_anleitungactivity"
+                    android:layout_toEndOf="@+id/inkrement_layout_anleitungactivity"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="25dp">
+
+                    <!-- Text für Erklärung des Inkrement Symbols -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/erhoeht_den_wert_um_1_anleitung_activity"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/raleway"
+                        android:padding="10dp"
+                        android:id="@+id/erklaerung_inkrement_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung des Dekrement Symbols-->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_below="@id/inkrement_layout_anleitungactivity"
+                    android:id="@+id/dekrement_layout_anleitungactvity">
+
+                    <!-- Dekrement Symbol -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/minus_anleitung_activity"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="-23dp"
+                        android:fontFamily="@font/raleway"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="80sp"
+                        android:id="@+id/dekrement_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung des Dekrement Symbols-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:id="@+id/erklaerung_dekrement_layout_anleitungactivity"
+                    android:layout_toEndOf="@+id/dekrement_layout_anleitungactvity"
+                    android:layout_below="@+id/erklaerung_inkrement_layout_anleitungactivity"
+                    android:layout_marginTop="57dp"
+                    android:layout_marginStart="25dp">
+
+                    <!-- Text für Erklärung des Dekrement Symbols -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reduziert_den_wert_um_1_anleitung_activity"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/raleway"
+                        android:padding="10dp"
+                        android:id="@+id/erklaerung_dekrement_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung des Schiebereglers-->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_below="@id/dekrement_layout_anleitungactvity"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/schieberegler_layout_anleitungactivity">
+
+                    <!-- Der Schieberegler der in EingabeActivity verwendet wird -->
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:progressTint="@color/hellblau"
+                        android:thumbTint="@color/dunkelblau"
+                        android:id="@+id/schieberegler_seekbar_anleitungactvitiy">
+                    </SeekBar>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung des Schiebereglers -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_toEndOf="@+id/schieberegler_layout_anleitungactivity"
+                    android:layout_below="@id/erklaerung_dekrement_layout_anleitungactivity"
+                    android:layout_marginTop="57dp"
+                    android:layout_marginStart="25dp"
+                    android:id="@+id/erklaerung_schieberegler_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung des Schiebereglers -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/regler_zum_anpassen_der_werte_anleitung_activity"
+                        android:fontFamily="@font/raleway"
+                        android:textColor="@color/mittelgrau"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:padding="10dp"
+                        android:id="@+id/erklaerung_schieberegler_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung des männlichen Symbols-->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/schieberegler_layout_anleitungactivity"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/maennlich_symbol_layout_anleitungactivity">
+
+                    <!-- Das männliche Symbol -->
+                    <ImageView
+                        android:id="@+id/maennlich_symbol_imageview_anleitungactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/maennlich_symbol_anleitung_activity"
+                        android:src="@drawable/symbol_maennlich_angeklickt"
+                        tools:ignore="ImageContrastCheck">
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung des männlichen Symbols-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/erklaerung_schieberegler_layout_anleitungactivity"
+                    android:layout_toEndOf="@+id/maennlich_symbol_layout_anleitungactivity"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginTop="59dp"
+                    android:layout_marginStart="25dp"
+                    android:id="@+id/erklaerung_maennlich_symbol_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung des männlichen Symbols -->
+                    <TextView
+                        android:id="@+id/erklaerung_maennlich_symbol_textview_anleitungactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/raleway"
+                        android:padding="10dp"
+                        android:text="@string/symbol_fuer_maennliches_geschlecht_anleitung_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextContrastCheck">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung des weiblichen Symbols -->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@+id/maennlich_symbol_layout_anleitungactivity"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/weiblich_symbol_layout_anleitungactivity">
+
+                    <!-- Das weibliche Symbol -->
+                    <ImageView
+                        android:id="@+id/weiblich_symbol_imageview_anleitungactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/weiblich_symbol_anleitung_activity"
+                        android:src="@drawable/symbol_weiblich_angeklickt"
+                        tools:ignore="ImageContrastCheck">
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung des weiblichen Symbols-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/erklaerung_maennlich_symbol_layout_anleitungactivity"
+                    android:layout_toEndOf="@+id/weiblich_symbol_layout_anleitungactivity"
+                    android:layout_marginTop="59dp"
+                    android:layout_marginStart="25dp"
+                    android:id="@+id/erklaerung_weiblich_symbol_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung des weiblichen Symbols -->
+                    <TextView
+                        android:id="@+id/erklaerung_weiblich_symbol_textview_anleitungactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/raleway"
+                        android:padding="10dp"
+                        android:text="@string/symbol_fuer_weibliches_geschlecht_anleitung_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextContrastCheck">
+                    </TextView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Textes zur Erklärung der Symbole -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/erklaerung_bedienelemente_layout_anleitungactivity"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/symbole_layout_anleitungactivity">
+
+                <!-- Text für den Titel Erklärung der Symbole -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/erklaerung_der_symbole_anleitung_activity"
+                    android:textSize="20sp"
+                    android:padding="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:id="@+id/symbole_textview_anleitungactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout für die ganzen Symbole bei AusgabeActivity -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/symbole_layout_anleitungactivity"
+                android:id="@+id/erklaerung_symbole_layout_anleitungactivity">
+
+                <!-- Das Layout zur Gestaltung des Symbols für das Normalgewicht -->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/normalgewicht_layout_anleitungactivity">
+
+                    <!-- Das Symbol für Normalgewicht -->
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/symbol_normalgewicht"
+                        android:id="@+id/normalgewicht_imageview_anleitungactivity"
+                        android:contentDescription="@string/symbol_normalgewicht_anleitung_activity">
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung des Symbols für das Normalgewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginStart="120dp"
+                    android:id="@+id/erklaerung_normalgewicht_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung des Symbols für das Normalgewicht -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/normalgewicht_text_anleitung_activity"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/raleway"
+                        android:textColor="@color/mittelgrau"
+                        android:padding="10dp"
+                        android:id="@+id/erklaerung_normalgewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung des Symbols für das Unter-/Übergewicht -->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/normalgewicht_layout_anleitungactivity"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/unter_uebergewicht_layout_anleitungactivity">
+
+                    <!-- Symbol für Unter-/Übergewicht -->
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/symbol_untergewicht_uebergewicht"
+                        android:id="@+id/unter_uebergewicht_imageview_anleitungactivity"
+                        android:contentDescription="@string/symbol_unter_uebergewicht_anleitung_activity">
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung des Symbols für das Unter-/Übergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/erklaerung_normalgewicht_layout_anleitungactivity"
+                    android:layout_marginTop="57dp"
+                    android:layout_marginStart="120dp"
+                    android:id="@+id/erklaerung_unter_uebergewicht_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung des Symbols für das Unter-/Übergewicht -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/unter_uebergewicht_text_anleitung_activity"
+                        android:padding="10dp"
+                        android:fontFamily="@font/raleway"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:id="@+id/erklaerung_unter_uebergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung des Symbols für das starke Unter-/Übergewicht -->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/unter_uebergewicht_layout_anleitungactivity"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/starkes_unter_uebergewicht_layout_anleitungactivity">
+
+                    <!-- Symbol für starkes Unter-/Übergewicht -->
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/symbol_starkes_untergewicht_uebergewicht"
+                        android:id="@+id/starkes_unter_uebergewicht_imageview_anleitungactivity"
+                        android:contentDescription="@string/symbol_starkes_unter_uebergewicht">
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung des Symbols für das starke Unter-/Übergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginTop="57dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_below="@id/erklaerung_unter_uebergewicht_layout_anleitungactivity"
+                    android:id="@+id/erklaerung_starkes_unter_uebergewicht_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung des Symbols für das starke Unter-/Übergewicht -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/starkes_unter_uebergewicht_text_anleitung_activity"
+                        android:fontFamily="@font/raleway"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="10dp"
+                        android:id="@+id/erklaerung_starkes_unter_uebergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Titels für die BMI Kategorien-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/erklaerung_symbole_layout_anleitungactivity"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/kategorien_layout_anleitungactivity">
+
+                <!-- Text für Titel der BMI Kategorien -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/bmi_kategorien_anleitung_activity"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:id="@+id/kategorien_textview_anleitungactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout für die ganzen BMI Kategorien -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/erklaerung_kategorien_layout_anleitungactivity"
+                android:layout_below="@id/kategorien_layout_anleitungactivity">
+
+                <!-- Das Layout zur Gestaltung der Kategorie für das starke Untergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:elevation="8dp"
+                    android:id="@+id/kategorie_starkes_untergewicht_layout_anleitungactivity">
+
+                    <!-- Text für Kategorie des starken Untergewichts -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmi_lt_16_anleitung_activity"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="16sp"
+                        android:id="@+id/kategorie_starkes_untergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung für das starke Untergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_toEndOf="@+id/kategorie_starkes_untergewicht_layout_anleitungactivity"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="70dp"
+                    android:id="@+id/erklaerung_kategorie_starkes_untergewicht_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung der Kategorie starkes Untergewicht -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="@string/starkes_untergewicht_anleitung_activity"
+                        android:textSize="16sp"
+                        android:textColor="@color/mittelgrau"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/raleway"
+                        android:id="@+id/erklaerung_kategorie_starkes_untergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Kategorie für das Untergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/kategorie_starkes_untergewicht_layout_anleitungactivity"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/kategorie_untergewicht_layout_anleitungactivity">
+
+                    <!-- Text für die Kategorie Untergewicht -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_16_lt_bmi_lt_18_5_anleitung_activity"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:id="@+id/kategorie_untergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung für die Kategorie Untergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:id="@+id/erklaerung_kategorie_untergewicht_layout_anleitungactivity"
+                    android:layout_toEndOf="@id/kategorie_untergewicht_layout_anleitungactivity"
+                    android:layout_below="@+id/erklaerung_kategorie_starkes_untergewicht_layout_anleitungactivity"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="22dp">
+
+                    <!-- Text für Erklärung der Kategorie des Untergewichts -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="@string/untergewicht_anleitung_activity"
+                        android:fontFamily="@font/raleway"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:id="@+id/erklaerung_kategorie_untergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Kategorie für das Normalgewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_below="@id/kategorie_untergewicht_layout_anleitungactivity"
+                    android:id="@+id/kategorie_normalgewicht_layout_anleitungactivity">
+
+                    <!-- Text für Kategorie des Normalgewichts -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="@string/_18_5_lt_bmi_lt_25_anleitung_activity"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:id="@+id/kategorie_normalgewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung der Kategorie für das Normalgewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/erklaerung_kategorie_untergewicht_layout_anleitungactivity"
+                    android:layout_toEndOf="@+id/kategorie_normalgewicht_layout_anleitungactivity"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="22dp"
+                    android:id="@+id/erklaerung_kategorie_normalgewicht_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung der Kategorie für das Normalgewicht -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/normalgewicht_anleitung_activity"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/raleway"
+                        android:textColor="@color/mittelgrau"
+                        android:padding="10dp"
+                        android:id="@+id/erklaerung_kategorie_normalgewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Kategorie für das Übergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/kategorie_uebergewicht_layout_anleitungactivity"
+                    android:layout_below="@id/kategorie_normalgewicht_layout_anleitungactivity">
+
+                    <!-- Text für Kategorie des Übergewichts -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_25_lt_bmi_lt_30_anleitung_activity"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/mittelgrau"
+                        android:textStyle="bold"
+                        android:id="@+id/kategorie_uebergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung der Kategorie für das Übergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_toEndOf="@+id/kategorie_uebergewicht_layout_anleitungactivity"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_below="@id/erklaerung_kategorie_normalgewicht_layout_anleitungactivity"
+                    android:id="@+id/erklaerung_kategorie_uebergewicht_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung der Kategorie für das Übergewicht -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="@string/uebergewicht_anleitung_activity"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/mittelgrau"
+                        android:fontFamily="@font/raleway"
+                        android:id="@+id/erklaerung_kategorie_uebergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Kategorie für das starke Übergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/kategorie_uebergewicht_layout_anleitungactivity"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/kategorie_starkes_uebergewicht_layout_anleitungactivity">
+
+                    <!-- Text für Kategorie des starken Übergewichts -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bmi_gt_30_anleitung_activity"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/mittelgrau"
+                        android:textStyle="bold"
+                        android:id="@+id/kategorie_starkes_uebergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung der Kategorie für das starke Übergewicht -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_below="@id/erklaerung_kategorie_uebergewicht_layout_anleitungactivity"
+                    android:layout_toEndOf="@+id/kategorie_starkes_uebergewicht_layout_anleitungactivity"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="70dp"
+                    android:id="@+id/erklaerung_kategorie_starkes_uebergewicht_layout_anleitungactivity">
+
+                    <!-- Text für Erklärung der Kategorie für das starke Übergewicht -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/starkes_uebergewicht_anleitung_activity"
+                        android:padding="10dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/mittelgrau"
+                        android:fontFamily="@font/raleway"
+                        android:textStyle="bold"
+                        android:id="@+id/erklaerung_kategorie_starkes_uebergewicht_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Titels für Weitere Informationen-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_below="@id/erklaerung_kategorien_layout_anleitungactivity"
+                android:id="@+id/infos_layout_anleitungactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp">
+
+                <!-- Text für Titel Weitere Informationen-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weitere_informationen_anleitung_activity"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/mittelgrau"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:id="@+id/infos_textview_anleitungactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout für die Verlinkung -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infos_layout_anleitungactivity"
+                android:id="@+id/erklaerung_infos_layout_anleitungactivity">
+
+                <!-- Das Layout zur Gestaltung der Verlinkung-->
+                <RelativeLayout
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:id="@+id/link_infos_layout_anleitungactivity">
+
+                    <!-- Das Symbol der Verlinkung -->
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/symbol_link"
+                        android:id="@+id/link_infos_imageview_anleitungactivity"
+                        android:contentDescription="@string/symbol_verlinkung_anleitung_activity">
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <!-- Das Layout zur Gestaltung der Erklärung für die Verlinkung -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    android:layout_marginTop="37dp"
+                    android:layout_marginStart="120dp"
+                    android:id="@+id/erklarung_link_infos_layout_anleitungactivity">
+
+                    <!-- Die Erklärung des Symbols der Verlinkung -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="@string/anklicken_fuer_weitere_informationen_anleitung_activity"
+                        android:fontFamily="@font/raleway"
+                        android:textColor="@color/mittelgrau"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:id="@+id/erklaerung_link_infos_textview_anleitungactivity">
+                    </TextView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

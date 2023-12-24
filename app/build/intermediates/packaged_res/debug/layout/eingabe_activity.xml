@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EingabeActivity">
+
+    <!-- Einfügen der Toolbar -->
+    <include
+        layout="@layout/toolbar">
+    </include>
+
+        <!-- Das Scrollview für EingabeActivity -->
+        <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+            <!-- Dient dazu, dass bei Einsatz eines Scrollview die restlichen Elemente angezeigt werden -->
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Horizontale Linie zur Gestaltung des UI -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/linie_horizontal">
+            </RelativeLayout>
+
+            <!-- Vertikale Linie zur Gestaltung des UI -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linie_vertikal">
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Namens -->
+            <RelativeLayout
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@id/koerpergroesse_layout_eingabeactivity"
+                android:layout_marginBottom="-140dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:id="@+id/name_layout_eingabeactivity">
+
+                <!-- Bereich um Namen einzugeben -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColorHint="@color/mittelgrau"
+                    android:hint="@string/name_eingeben_eingabe_activity"
+                    android:id="@+id/name_edittext_eingabeactivity"
+                    android:inputType="none"
+                    tools:ignore="Autofill">
+                </EditText>
+
+            </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung der Körpergröße -->
+                <RelativeLayout
+                    android:id="@+id/koerpergroesse_layout_eingabeactivity"
+                    android:layout_width="340dp"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    tools:ignore="TextSizeCheck">
+
+                    <!-- Körpergröße Text -->
+                    <TextView
+                        android:id="@+id/koerpergroesse_ueberschrift_eingabeactivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/koerpergroesse_eingabe_activity"
+                        android:textAlignment="center"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Aktuelle Körpergröße -->
+                    <TextView
+                        android:id="@+id/koerpergroesse_aktuell_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_187_eingabe_activity"
+                        android:textAlignment="center"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="40sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Zentimeter Text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/koerpergroesse_aktuell_eingabeactivity"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/cm_eingabe_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Seekbar zum Einstellen der aktuellen Körpergröße -->
+                    <SeekBar
+                        android:id="@+id/koerpergroesse_seekbar_eingabeactivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:progressTint="@color/hellblau"
+                        android:thumbTint="@color/dunkelblau">
+                    </SeekBar>
+
+                    <!-- Ein plus um aktuellen Wert um 1 zu erhöhen -->
+                    <TextView
+                        android:id="@+id/koerpergroesse_inkrement_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="275dp"
+                        android:layout_marginBottom="-7.5dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/koerpergroesse_plus_eingabe_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="30sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Ein Minus um aktuellen Wert um 1 zu reduzieren -->
+                    <TextView
+                        android:id="@+id/koerpergroesse_dekrement_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginBottom="-5dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/koerpergroesse_minus_eingabe_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="30sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung des Körpergewichts -->
+                <RelativeLayout
+                    android:id="@+id/koerpergewicht_layout_eingabeactivity"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_below="@id/koerpergroesse_layout_eingabeactivity"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toStartOf="@id/linie_vertikal"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    tools:ignore="TextSizeCheck">
+
+                    <!-- Körpergewicht Text -->
+                    <TextView
+                        android:id="@+id/koerpergewicht_ueberschrift_eingabeactivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/koerpergewicht_eingabe_activity"
+                        android:textAlignment="center"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="18sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Aktuelles Körpergewicht -->
+                    <TextView
+                        android:id="@+id/koerpergewicht_aktuell_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_69_eingabe_activity"
+                        android:textAlignment="center"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="40sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Kilogramm Text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="65dp"
+                        android:layout_toEndOf="@id/koerpergewicht_aktuell_eingabeactivity"
+                        android:text="@string/kg_eingabe_activity"
+                        android:textAlignment="center"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Seekbar zum Einstellen des aktuellen Körpergewichts -->
+                    <SeekBar
+                        android:id="@+id/koerpergewicht_seekbar_eingabeactivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        android:progressTint="@color/hellblau"
+                        android:thumbTint="@color/dunkelblau">
+                    </SeekBar>
+
+                    <!-- Ein Plus um aktuellen Wert um 1 zu erhöhen -->
+                    <TextView
+                        android:id="@+id/koerpergewicht_inkrement_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="115dp"
+                        android:layout_marginBottom="-7.5dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/koerpergewicht_plus_eingabe_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="30sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Ein Minus um aktuellen Wert um 1 zu reduzieren -->
+                    <TextView
+                        android:id="@+id/koerpergewicht_dekrement_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="-5dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/koerpergewicht_minus_eingabe_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="30sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung des Alters -->
+                <RelativeLayout
+                    android:id="@+id/alter_layout_eingabeactivity"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_below="@id/koerpergroesse_layout_eingabeactivity"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toEndOf="@id/linie_vertikal"
+                    android:background="@drawable/hintergrundbereich_ui_elemente"
+                    android:elevation="8dp"
+                    tools:ignore="TextSizeCheck">
+
+                    <!-- Alter Text -->
+                    <TextView
+                        android:id="@+id/alter_text_ausgabeactivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/alter_eingabe_activity"
+                        android:textAlignment="center"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="18sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Aktuelles Alter -->
+                    <TextView
+                        android:id="@+id/alter_aktuell_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_76_eingabe_activity"
+                        android:textAlignment="center"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="40sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Jahr Text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="65dp"
+                        android:layout_toEndOf="@id/alter_aktuell_eingabeactivity"
+                        android:text="@string/j_eingabe_activity"
+                        android:textAlignment="center"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Seekbar zum Einstellen des aktuellen Alters -->
+                    <SeekBar
+                        android:id="@+id/alter_seekbar_eingabeactivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        android:progressTint="@color/hellblau"
+                        android:thumbTint="@color/dunkelblau">
+                    </SeekBar>
+
+                    <!-- Ein Plus um aktuellen Wert um 1 zu erhöhen -->
+                    <TextView
+                        android:id="@+id/alter_inkrement_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="115dp"
+                        android:layout_marginBottom="-7.5dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/alter_plus_eingabe_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="30sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                    <!-- Ein Minus um aktuellen Wert um 1 zu reduzieren -->
+                    <TextView
+                        android:id="@+id/alter_dekrement_eingabeactivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="-5dp"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/alter_minus_eingabe_activity"
+                        android:textColor="@color/mittelgrau"
+                        android:textSize="30sp"
+                        android:textStyle="bold">
+                    </TextView>
+
+                </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung des Geschlechts männlich -->
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_below="@+id/koerpergewicht_layout_eingabeactivity"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:id="@+id/maennlich_layout_eingabeactivity">
+
+                <!-- Symbol für männliches Geschlecht -->
+                <ImageView
+                    android:id="@+id/maennlich_imageview_eingabeactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/symbol_maennlich_nicht_angeklickt"
+                    android:contentDescription="@string/maennliches_symbol_eingabe_activity">
+                </ImageView>
+
+                <!-- Text männlich -->
+                <TextView
+                    android:id="@+id/maennlich_unterschrift_eingabeactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/maennlich_eingabe_activity"
+                    android:textAlignment="center"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung des Geschlechts weiblich -->
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_toEndOf="@+id/linie_vertikal"
+                android:layout_below="@+id/alter_layout_eingabeactivity"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:id="@+id/weiblich_layout_eingabeactivity">
+
+                <!-- Symbol für weibliches Geschlecht -->
+                <ImageView
+                    android:id="@+id/weiblich_imageview_eingabeactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/symbol_weiblich_nicht_angeklickt"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/weibliches_symbol_eingabe_activity">
+                </ImageView>
+
+                <!-- Text weiblich -->
+                <TextView
+                    android:id="@+id/weiblich_unterschrift_eingabeactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/weiblich_eingabe_activity"
+                    android:textAlignment="center"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung des berechnen Buttons -->
+            <RelativeLayout
+                android:id="@+id/bmi_berechnen_layout_eingabeactivity"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/maennlich_layout_eingabeactivity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp">
+
+                <!-- Button zum Berechnen des BMI -->
+                <android.widget.Button
+                    android:id="@+id/bmi_berechnen_button_eingabeactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/hintergrundbereich_ui_element_button"
+                    android:elevation="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/berechne_dein_bmi_eingabe_activity"
+                    android:textColor="@color/weiß"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="VisualLintButtonSize">
+                </android.widget.Button>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

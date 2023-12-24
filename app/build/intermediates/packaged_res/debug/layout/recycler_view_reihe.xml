@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/eintrag_layout_recyclerview">
+
+    <!-- Karte um Daten anzuzeigen -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/hellgrau"
+        android:background="@drawable/hintergrundbereich_ui_elemente"
+        android:elevation="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <!-- Text für ID -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginStart="5dp"
+            android:text="@string/_1_recycler_view_reihe"
+            android:textSize="30sp"
+            android:textColor="@color/mittelgrau"
+            android:textStyle="bold"
+            android:id="@+id/id_textview_datenbank">
+        </TextView>
+
+        <!-- Text für Titel -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titel_recycler_view_reihe"
+            android:textColor="@color/mittelgrau"
+            android:textStyle="bold"
+            android:fontFamily="@font/raleway"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="56dp"
+            android:id="@+id/titel_textview_datenbank">
+        </TextView>
+
+        <!-- Text für Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_recycler_view_reihe"
+            android:textColor="@color/mittelgrau"
+            android:textStyle="bold"
+            android:fontFamily="@font/raleway"
+            android:textSize="14sp"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="57dp"
+            android:id="@+id/name_textview_datenbank">
+        </TextView>
+
+        <!-- Text für Datum -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_07_11_2003_recycler_view_reihe"
+            android:textColor="@color/mittelgrau"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_gravity="end"
+            android:id="@+id/datum_textview_datenbank">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

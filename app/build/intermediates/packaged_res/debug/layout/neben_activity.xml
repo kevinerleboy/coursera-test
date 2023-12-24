@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NebenActivity">
+
+    <!-- Einfügen der Toolbar -->
+    <include
+        layout="@layout/toolbar">
+    </include>
+
+    <!-- Das Scrollview für NebenActivity -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- Dient dazu, dass bei Einsatz eines Scrollview die restlichen Elemente angezeigt werden -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Horizontale Linie zur Gestaltung des UI -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/linie_horizontal">
+            </RelativeLayout>
+
+            <!-- Vertikale Linie zur Gestaltung des UI -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linie_vertikal">
+            </RelativeLayout>
+
+            <!-- Layout zur Gestaltung des Titels -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="90dp"
+                android:id="@+id/titel_layout_nebenactivity">
+
+                <!-- Text für den Titel -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="@string/folgende_werte_werden_in_die_datenbank_hinzugefuegt_neben_activity"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:id="@+id/titel_textview_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des eingegebenen Namens -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_below="@+id/titel_layout_nebenactivity"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/name_layout_nebenactivity">
+
+                <!-- Überschrift für Name Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_neben_activity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:id="@+id/name_ueberschrift_nebenactivity">
+                </TextView>
+
+                <!-- Der Name von AusgabeActivity -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/name_text_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des eingegebenen Alters -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_below="@id/name_layout_nebenactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/alter_layout_nebenactivity">
+
+                <!-- Überschrift für Alter Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alter_neben_activity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:id="@+id/alter_ueberschrift_nebenactivity">
+                </TextView>
+
+                <!-- Das Alter von AusgabeActivity -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/alter_text_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des angegebenen Geschlechts -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_below="@id/alter_layout_nebenactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/geschlecht_layout_nebenactivity">
+
+                <!-- Überschrift für Geschlecht Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/geschlecht_neben_activity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:id="@+id/geschlecht_ueberschrift_nebenactivity">
+                </TextView>
+
+                <!-- Das Geschlecht von AusgabeActivity -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/geschlecht_text_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung der eingegebenen Körpergröße -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toEndOf="@id/linie_vertikal"
+                android:layout_below="@id/titel_layout_nebenactivity"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/koerpergroesse_layout_nebenactivity">
+
+                <!-- Überschrift für Körpergröße Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/koerpergroessee_neben_activity"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:id="@+id/koerpergroesse_ueberschrift_nebenactivity">
+                </TextView>
+
+                <!-- Die Körpergröße von AusgabeActivity -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/koerpergroesse_text_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des eigenen Körpergewichts -->
+            <RelativeLayout
+                android:id="@+id/koerpergewicht_layout_nebenactivity"
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:layout_below="@id/koerpergroesse_layout_nebenactivity"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_toEndOf="@id/linie_vertikal"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                tools:ignore="TextSizeCheck">
+
+                <!-- Überschrift für Körpergewicht Layout -->
+                <TextView
+                    android:id="@+id/koerpergewicht_ueberschrift_nebenactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/koerpergewicht_neben_activity"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <!-- Das Körpergewicht von AusgabeActivity -->
+                <TextView
+                    android:id="@+id/koerpergewicht_text_nebenactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung der zugehörigen Kategorie -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toEndOf="@id/linie_vertikal"
+                android:layout_below="@id/koerpergewicht_layout_nebenactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/kategorie_layout_nebenactivity">
+
+                <!-- Überschrift für Kategorie Layout -->
+                <TextView
+                    android:id="@+id/kategorie_ueberschrift_nebenactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/kategorie_neben_activity"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <!-- Die Kategorie von AusgabeActivity -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/kategorie_text_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des aktuellen Datums -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toStartOf="@id/linie_vertikal"
+                android:layout_below="@id/geschlecht_layout_nebenactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/datum_layout_nebenactivity">
+
+                <!-- Überschrift für Datum Layout -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/datum_neben_activity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:id="@+id/datum_ueberschrift_nebenactivity">
+                </TextView>
+
+                <!-- Das erstellte Datum aus AusgabeActivity -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/datum_text_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des BMI -->
+            <RelativeLayout
+                android:layout_width="175dp"
+                android:layout_height="70dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_toEndOf="@id/linie_vertikal"
+                android:layout_below="@id/kategorie_layout_nebenactivity"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/bmi_layout_nebenactivity">
+
+                <!-- Überschrift für BMI Layout -->
+                <TextView
+                    android:id="@+id/bmi_ueberschrift_nebenactivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/bmi_neben_activity"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <!-- Das BMI von AusgabeActivity -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mittelgrau"
+                    android:textSize="15sp"
+                    android:id="@+id/bmi_text_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Titels Titel für Berechnung festlegen -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/datum_layout_nebenactivity"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/titel_festlegung_layout_nebenactivity">
+
+                <!-- Text für Titel für Berechnung festlegen -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/titel_fuer_berechnung_festlegen_neben_activity"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:id="@+id/titel_festlegung_textview_nebenactivity">
+                </TextView>
+
+            </RelativeLayout>
+
+            <!-- Das Layout zur Gestaltung des Titels für die Berechnung -->
+            <RelativeLayout
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/titel_festlegung_layout_nebenactivity"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp"
+                android:id="@+id/add_titel_layout_nebenactivity">
+
+                <!-- Bereich um Titel der Berechnung einzugeben -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/raleway"
+                    android:textColor="@color/mittelgrau"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColorHint="@color/mittelgrau"
+                    android:hint="@string/titel_hinzufuegen_neben_activity"
+                    android:id="@+id/add_titel_edittext_nebenactivity"
+                    android:inputType="none"
+                    tools:ignore="Autofill">
+                </EditText>
+
+            </RelativeLayout>
+
+            <!-- Bereich zur Gestaltung des bestätigen Buttons -->
+            <RelativeLayout
+                android:id="@+id/bestaetigen_layout_nebenactivity"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/add_titel_layout_nebenactivity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/hintergrundbereich_ui_elemente"
+                android:elevation="8dp">
+
+                <!-- Button zum Bestätigen des Hinzufügens in die Datenbank -->
+                <android.widget.Button
+                    android:id="@+id/bestaetigen_button_nebenactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/hintergrundbereich_ui_element_button"
+                    android:elevation="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/hinzufuegen_bestaetigen_neben_activity"
+                    android:textColor="@color/weiß"
+                    android:textSize="15sp"
+                    android:textStyle="bold">
+                </android.widget.Button>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
